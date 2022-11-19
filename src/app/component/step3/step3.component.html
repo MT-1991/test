@@ -1,0 +1,28 @@
+<p-fieldset legend="Step3">
+
+    <p-table [value]="persons" [tableStyle]="{'min-width': '50rem'}">
+        <ng-template pTemplate="header">
+            <tr>
+                <th>Name</th>
+                <th>Family</th>
+                <th>Code</th>
+                <th>Action</th>
+            </tr>
+        </ng-template>
+        <ng-template pTemplate="body" let-person>
+            <tr>
+                <td>{{person.name}}</td>
+                <td>{{person.family}}</td>
+                <td>{{person.usercode}}</td>
+                <td>
+                <button pButton class="mx-3 " type="button" label="Next" (click)="nextPage(person)"></button>
+                </td>
+            </tr>
+        </ng-template>
+    </p-table>
+    <div class="field col-12 md:col-12 sm:col-6 flex flex-wrap ">
+        <button pButton class="mx-3 " type="button" label="Back" class="p-button-danger"
+            (click)="prevPage()"></button>
+    </div>
+    
+</p-fieldset>

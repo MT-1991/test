@@ -1,0 +1,25 @@
+<div class="card">
+    <h2>Upload image</h2>
+    <div class="formgrid grid">
+        <div class="field col-12 md:col-6">
+            <div class="content-section implementation">
+                <p-toast></p-toast>
+                <div class="card">
+                    <p-fileUpload name="demo[]" (onSelect)="onUpload($event)" accept="image/*">
+                        <ng-template pTemplate="content">
+                            <ul *ngIf="information.fileObject">
+                                <li >{{information.fileObject.name}} - {{information.fileObject.size}} bytes</li>
+                            </ul>
+                        </ng-template>
+                    </p-fileUpload>
+
+                </div>
+            </div>
+
+        </div>
+
+        <div class="field col-12 md:col-12 sm:col-6 flex flex-wrap ">
+            <button pButton class="mx-3 " type="button" label="Next" (click)="nextPage()"></button>
+        </div>
+    </div>
+</div>

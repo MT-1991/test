@@ -1,0 +1,36 @@
+<p-fieldset legend="Step2">
+
+    <div class="card">
+        <h2>Info</h2>
+        <div class="formgrid grid">
+            <div class="field sm:col-12 md:col-6">
+                <label for="count">Count</label>
+                <p-inputNumber [(ngModel)]="information.count"></p-inputNumber>
+              </div>
+
+            <div class="field sm:col-12 md:col-6">
+                <label for="disabledays">Date</label>
+                <p-calendar [(ngModel)]="information.date" [minDate]="today" [maxDate]="maxDate" [readonlyInput]="true"
+                    inputId="disabledays"></p-calendar>
+            </div>
+            <div class="field sm:col-12 md:col-6">
+                <label for="status">Status</label>
+                <p-dropdown id="status" [options]="status" [(ngModel)]="information.status" optionLabel="name"
+                    optionValue="code"></p-dropdown>
+            </div>
+
+            <div class="field sm:col-12 md:col-6"> 
+                <label for="source">Source</label>
+                <input pInputText inputrestriction="[a-zA-Z]"  [(ngModel)]="information.source" />
+             </div>
+
+            <div class="field sm:col-12 md:col-6 flex flex-wrap ">
+                <button pButton class="mx-3 " type="button" label="Back" class="p-button-danger"
+                    (click)="prevPage()"></button>
+
+                <button pButton class="mx-3" type="button" label="Next" (click)="nextPage()"></button>
+            </div>
+        </div>
+    </div>
+
+</p-fieldset>
